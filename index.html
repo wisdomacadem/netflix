@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamVault | Movie Discovery App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Stream<span>Vault</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#movies">Movies</a>
+      <a href="#watchlist">Watchlist</a>
+    </nav>
+    <button id="themeBtn" class="ghost-btn">🌙</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Portfolio Project #4</p>
+        <h1>Netflix-style movie discovery app</h1>
+        <p class="subtitle">Search, filter, preview, and save movies to a local watchlist. Built with vanilla JavaScript, CSS Grid, localStorage, and responsive UI design.</p>
+        <div class="hero-actions">
+          <a href="#movies" class="primary-btn">Explore Movies</a>
+          <button id="randomPick" class="secondary-btn">Surprise Me</button>
+        </div>
+      </div>
+      <div class="hero-card" id="featuredCard"></div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="movieCount">0</strong><span>Titles</span></div>
+      <div><strong id="watchlistCount">0</strong><span>Saved</span></div>
+      <div><strong>100%</strong><span>Responsive</span></div>
+      <div><strong>JS</strong><span>Interactive</span></div>
+    </section>
+
+    <section id="movies" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Browse</p>
+          <h2>Popular Titles</h2>
+        </div>
+        <div class="controls">
+          <input id="searchInput" type="search" placeholder="Search movies..." />
+          <select id="genreFilter">
+            <option value="all">All Genres</option>
+          </select>
+        </div>
+      </div>
+      <div id="movieGrid" class="movie-grid"></div>
+    </section>
+
+    <section id="watchlist" class="section watch-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Saved</p>
+          <h2>My Watchlist</h2>
+        </div>
+        <button id="clearWatchlist" class="ghost-btn">Clear Watchlist</button>
+      </div>
+      <div id="watchlistGrid" class="movie-grid empty-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <article class="modal-card">
+      <button id="closeModal" class="close-btn">×</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+  <footer>
+    <p>Built for a JavaScript portfolio: dynamic rendering, filtering, modals, watchlist state, localStorage.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
